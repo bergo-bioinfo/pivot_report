@@ -1,0 +1,32 @@
+{
+    "framework-version": 3,
+    "name": "PivotReport",
+    "namespace": "InstitutBergonie\\PivotReportExternalModule",
+    "description": "Convert row repeats into columns from a report.",
+    "authors": [
+        {
+            "name": "Yec'han Laizet",
+            "email": "y.laizet@bordeaux.unicancer.fr",
+            "institution": "Institut Bergonié"
+        },
+        {
+            "name": "Quentin Cavaillé",
+            "email": "q.cavaille@bordeaux.unicancer.fr",
+            "institution": "Institut Bergonié"
+        }
+    ],
+    "links": {
+        "project": [
+            {
+                "name": "PivotReport",
+                "icon": "fas fa-sliders-h",
+                "show-header-and-footer": true,
+                "url": "pivot_report.php"
+            }
+        ]
+    },
+    "compatibility": {
+        "redcap-version-min": "8.3.0",
+        "redcap-version-max": ""
+    }
+}
