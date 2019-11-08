@@ -19,7 +19,7 @@
         "project": [
             {
                 "name": "PivotReport",
-                "icon": "fas fa-sliders-h",
+                "icon": "fas fa-table",
                 "show-header-and-footer": true,
                 "url": "pivot_report.php"
             }
