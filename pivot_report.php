@@ -5,7 +5,7 @@
  *              Pivot table d'un rapport pour mettre en colonne les champs pour chaque event (ou instrument) et
  *              pour chaque instance de l'evenement (ou instrument).
  *              
- * VERSION: 1.3
+ * VERSION: 2.0.0
  * AUTHOR: Yec'han Laizet, Pierre Mancini
  */
 
