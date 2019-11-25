@@ -5,8 +5,8 @@
  *              Pivot table d'un rapport pour mettre en colonne les champs pour chaque event (ou instrument) et
  *              pour chaque instance de l'evenement (ou instrument).
  *              
- * VERSION: 2.0.0
- * AUTHOR: Yec'han Laizet, Pierre Mancini
+ * VERSION: 1.3
+ * AUTHOR: Yec'han Laizet, Pierre Mancini, Quentin Cavaillé
  */
 
 $php_filename = basename(__FILE__);
@@ -73,7 +73,7 @@ if (isset($_GET['report_id']) && (is_numeric($_GET['report_id'])) && $_GET['repo
         $array_for_csv = custom_emptying($untrimArray, $IDField);
 
         if (REDCap::isLongitudinal()) {
-            $file_content = format_csv($array_for_csv, $eventMetaData, $IDField, $reportFields, True);
+            $file_content = format_csv($array_for_csv, $eventMetaData, $IDField, $reportFields, True, NULL);
         } else {
 
             foreach ($fieldIntrumentMap as $instru => $value) {
@@ -138,10 +138,9 @@ function custom_emptying($array, $IDField) {
         }
     }
 
-    if (onlyIDandComplete($array, $IDField)) {
-
-        return NULL;
-    }
+//    if (onlyIDandComplete($array, $IDField)) {
+  //      return NULL;
+//    }
 
     return $array;
 }
@@ -503,7 +502,7 @@ function format_csv(array $infoGetData, array $metaData, $IDField, $reportFields
         $lines = array();
 
         // Pour le test ajouter un nouveau event avec des instruments indépendants
-        $maximums = max_instance_by_instrument($infoGetData);
+        $maximums = max_instance_by_instrument($infoGetData, NULL);
         $instrumentData = mapInstrumentData($infoGetData);
 
         // Tri reportFields
