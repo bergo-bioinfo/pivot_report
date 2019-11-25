@@ -13,7 +13,6 @@ $php_filename = basename(__FILE__);
 
 // Documentation to develop plugin: <website>/Plugins/index.php?REDCapMethod=getEventNames
 // Call the REDCap Connect file in the main "redcap" directory
-require_once "../redcap_connect.php";
 
 /*
  * Page Logic
