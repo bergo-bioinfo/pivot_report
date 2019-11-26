@@ -1081,12 +1081,12 @@ if (!isset($_GET["ddl"])) {
         Tableau croisé (Pivot table) d'un rapport pour mettre en colonne les champs pour chaque event.
     </h3>
     <div class="chklist" style="padding:8px 15px 7px;margin:5px 0 20px;max-width:770px;">
-        <form action="<?php echo(basename(__FILE__)); ?>?pid=<?php echo PROJECT_ID; ?>&report_id=<?php echo $_GET["report_id"]; ?>&ddl=" method="post">
+        <form action="?pid=<?php echo PROJECT_ID; ?>&report_id=<?php echo $_GET["report_id"]; ?>&prefix=pivot_report&page=pivot_report&ddl=" method="post">
             <span class="label">Choisir un rapport</span>
             <?php
             print RCView::select(array(
                         'class' => "x-form-text x-form-field",
-                        'onchange' => 'window.location.href="' . PAGE_FULL . "?pid=" . $_GET['pid'] . '&report_id=' . '"+this.value'
+                        'onchange' => 'window.location.href="' . "?pid=" . $_GET['pid'] . '&prefix=pivot_report&page=pivot_report&report_id=' . '"+this.value'
                             ), $report_names, $_GET['report_id']);
             ?>
             <input type="submit" value="Télécharger" name="submit">
