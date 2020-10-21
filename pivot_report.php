@@ -56,6 +56,9 @@ if (isset($_GET['report_id']) && (is_numeric($_GET['report_id'])) && $_GET['repo
 
         $dataDictionary = REDCap::getDataDictionary(PROJECT_ID, 'array');
         $events_mapping = REDCap::getEventNames(True);
+        if (is_bool($events_mapping)){
+		$events_mapping = array();
+        }
 
         libxml_use_internal_errors(True);
         $metadataOnly = True;
@@ -682,7 +685,9 @@ function format_csv(array $infoGetData, array $metaData, $IDField, $reportFields
 
     $csv = '';
     foreach ($table as $line) {
+        if (!is_bool($line)){
         $csv .= array_to_csv($line).PHP_EOL;
+}
     }
 
     return $csv;
